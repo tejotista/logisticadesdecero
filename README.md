@@ -18,7 +18,7 @@ El repositorio consta de dos archivos principales:
 *   `index.html`: Contiene toda la redacción (copywriting), la estructura de navegación y las secciones (Inicio, Enfoque, Servicios y Contacto).
 *   `style.css`: Define la paleta de colores, la tipografía y el comportamiento visual de la página en diferentes dispositivos.
 
-## 🚀 Cómo utilizar este código
+## Cómo utilizar este código
 
 Si querés estudiar este código o usarlo como base para tu propia web, el proceso es muy directo. Al ser un sitio estático, no requiere instalación de servidores locales (como Node.js o bases de datos).
 
@@ -33,6 +33,6 @@ Para personalizar la web para tu propio proyecto:
 1.  Abrí `index.html` en cualquier editor de texto o código (como Bloc de notas, VS Code o directamente en GitHub) y modificá los textos que están entre las etiquetas (por ejemplo, cambiá el contenido dentro de los `<h1>`, `<p>`, etc.).
 2.  Para modificar la paleta de colores, abrí `style.css` y alterá los valores hexadecimales en la sección `:root` al principio del archivo.
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT. Esto significa que el código es de código abierto. Podés usarlo, modificarlo, distribuirlo e incluso usarlo con fines comerciales, siempre y cuando se incluya el aviso de derechos de autor original.
