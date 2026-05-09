@@ -1,138 +1,95 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+/* --- Variables de Paleta Armoniosa --- */
+:root {
+    --bg-peach: linear-gradient(135deg, #FFF9F5 0%, #FAE1D4 40%, #F5C6A5 100%);
+    --bg-white: #FFFFFF;
+    --bg-cream: #FFFDFB; /* Un blanco súper cálido para cortar suavemente */
+    
+    --text-dark: #1A1A1A;
+    --text-muted: #555555;
+    
+    --accent-plum: #5A3A4B; /* El color violáceo/marrón del botón de Nugo */
+    --accent-light: #F3EBEF; /* Un fondo suavecito para los íconos */
 }
 
-body {
-    /* Degradado cálido idéntico al de Nugo (durazno, beige, blanco) */
-    background: linear-gradient(135deg, #FFF9F5 0%, #FAE1D4 40%, #F5C6A5 100%);
-    color: #111111; /* Texto casi negro */
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: var(--bg-white); color: var(--text-dark); overflow-x: hidden; }
 
-/* --- Menú de navegación superior --- */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 5%;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
+/* --- Menú Superior --- */
+.navbar { position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; z-index: 1000; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.5px; }
+.logo span { font-weight: 500; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s; }
+.nav-links a:hover { opacity: 0.6; }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+/* --- 1. PORTADA DURAZNO --- */
+.hero-durazno {
+    background: var(--bg-peach);
+    height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 0 5%;
 }
+.hero-content { max-width: 900px; }
+.hero-durazno h1 { font-size: clamp(3rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; color: var(--text-dark); }
+.hero-durazno p { font-size: 1.25rem; color: #333; font-weight: 500; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
 
-.logo span {
-    font-weight: 500;
+/* El botón oscuro elegante */
+.btn-primary-nugo {
+    display: inline-block; background: linear-gradient(90deg, #4A3343 0%, #684152 100%); color: #FFF; text-decoration: none;
+    padding: 1.1rem 2.5rem; border-radius: 100px; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; border: none;
 }
+.btn-primary-nugo:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 51, 67, 0.3); }
 
-.nav-links {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
+/* --- Títulos de Secciones --- */
+.section-header { text-align: center; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+.section-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -1px; }
+.section-header p { font-size: 1.1rem; color: var(--text-muted); line-height: 1.6; }
+
+/* --- 2. METODOLOGÍA (Cómo trabajamos) --- */
+.methodology-section { padding: 8rem 5%; background-color: var(--bg-white); }
+.steps-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1100px; margin: 0 auto;
 }
-
-.nav-links a {
-    text-decoration: none;
-    color: #111111;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: opacity 0.2s;
+.step-card { text-align: left; }
+.step-number { 
+    font-size: 3rem; font-weight: 800; color: var(--accent-light); 
+    margin-bottom: 1rem; line-height: 1; letter-spacing: -2px;
+    -webkit-text-stroke: 1px var(--accent-plum); /* Número transparente con borde de color */
 }
+.step-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark); }
+.step-card p { color: var(--text-muted); line-height: 1.6; font-size: 1rem; }
 
-.nav-links a:hover {
-    opacity: 0.6;
+/* --- 3. SERVICIOS --- */
+.services-section { padding: 8rem 5%; background-color: var(--bg-cream); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+.service-card {
+    background: var(--bg-white); padding: 3rem 2.5rem; border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02);
 }
-
-/* --- Introducción Centrada (Hero) --- */
-.hero {
-    height: 100vh; /* Ocupa toda la pantalla al abrir */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0 5%;
+.service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
+.service-icon {
+    width: 60px; height: 60px; background: var(--accent-light); border-radius: 16px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.5rem;
 }
+.service-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-dark); }
+.service-card p { color: var(--text-muted); line-height: 1.6; font-size: 1rem; }
 
-.hero-content {
-    max-width: 900px;
-}
+/* --- 4. CTA FINAL --- */
+.cta-section { padding: 6rem 5%; text-align: center; background: var(--bg-peach); }
+.cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -1px; }
+.cta-section p { font-size: 1.1rem; color: #333; margin-bottom: 2.5rem; }
 
-.hero h1 {
-    font-size: clamp(3rem, 6vw, 4.8rem); /* Tipografía gigante y adaptable */
-    font-weight: 800;
-    line-height: 1.05;
-    letter-spacing: -2px;
-    margin-bottom: 1.5rem;
-    color: #1A1A1A;
-}
-
-.hero p {
-    font-size: 1.25rem;
-    color: #333333;
-    font-weight: 500;
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* --- Botón oscuro estilo Nugo --- */
-.btn-primary {
-    display: inline-block;
-    background: linear-gradient(90deg, #4A3343 0%, #684152 100%); /* Simula ese botón amarronado/violeta */
-    color: #FFFFFF;
-    text-decoration: none;
-    padding: 1.1rem 2.5rem;
-    border-radius: 100px; /* Botón redondeado */
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 20px rgba(74, 51, 67, 0.3);
-}
-
-/* --- Botón Flotante WhatsApp --- */
+/* --- Botón WhatsApp --- */
 .whatsapp-float {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: #25D366;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-    transition: transform 0.2s;
-    z-index: 1000;
+    position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.2s; z-index: 1000;
 }
+.whatsapp-float:hover { transform: scale(1.1); }
 
-.whatsapp-float:hover {
-    transform: scale(1.1);
-}
-
-/* Oculta los links del menú en celulares para no amontonar todo */
+/* Adaptación Celular */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none; 
-    }
-    .whatsapp-float {
-        bottom: 20px;
-        right: 20px;
-        width: 55px;
-        height: 55px;
-    }
+    .nav-links { display: none; }
+    .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
+    .methodology-section, .services-section { padding: 5rem 5%; }
 }
