@@ -3,125 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoría Logística | Nivel SaaS</title>
-    <!-- Fuente Plus Jakarta Sans: El secreto del estilo NUGO -->
+    <title>Logística Simple | Consultoría Pro</title>
+    <!-- Usamos Inter, la fuente estándar de la industria Tech/SaaS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Menú Flotante Estilo Píldora -->
-    <div class="nav-wrapper">
-        <nav class="navbar">
-            <div class="logo">Logística<span>Simple</span></div>
+    <!-- Menú Flotante (Glassmorphism exacto) -->
+    <nav class="nugo-nav">
+        <div class="nav-container">
+            <div class="logo">Logística<span>Simple.</span></div>
             <ul class="nav-links">
                 <li><a href="#soluciones">Soluciones</a></li>
-                <li><a href="#proceso">El Proceso</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#casos">Casos de éxito</a></li>
             </ul>
-            <a href="#contacto" class="btn-primary btn-sm">Agendar asesoría</a>
-        </nav>
-    </div>
+            <a href="#contacto" class="btn-primary btn-sm">Hablar con un experto</a>
+        </div>
+    </nav>
 
-   <!-- Hero en Modo Oscuro Espectacular (Estilo NUGO) -->
-    <header class="hero-dark">
-        <!-- Luces traseras inmensas -->
-        <div class="glow-bg glow-purple"></div>
-        <div class="glow-bg glow-blue"></div>
-        
+    <!-- Hero Section (Modo oscuro extremo, centrado) -->
+    <header class="nugo-hero">
+        <!-- Luces de fondo sutiles -->
+        <div class="hero-glow glow-left"></div>
+        <div class="hero-glow glow-right"></div>
+
         <div class="hero-content">
-            <div class="badge-dark">
-                <span class="badge-dot pulse"></span> Innovación en Supply Chain
+            <div class="nugo-badge">
+                <span class="badge-dot"></span> Para empresas y emprendedores
             </div>
-            <!-- Título gigante y ajustado -->
-            <h1 class="hero-title">Logística inteligente.<br><span class="text-gradient">Operación rentable.</span></h1>
-            <p class="hero-subtitle">Estructuramos tu inventario y distribución desde el primer día. Sin software costoso, solo procesos claros que hacen crecer tu rentabilidad.</p>
-            <div class="hero-buttons">
-                <a href="#contacto" class="btn-primary btn-large btn-glow">Agendar diagnóstico gratis</a>
-                <a href="#soluciones" class="btn-outline-dark btn-large">Ver servicios</a>
+            
+            <h1 class="nugo-title">
+                Operaciones eficientes.<br>
+                <span class="text-gradient">Rentabilidad real.</span>
+            </h1>
+            
+            <p class="nugo-subtitle">
+                Estructuramos tu inventario y ruteo desde el primer día. Pasá del caos operativo al control total sin invertir en sistemas corporativos costosos.
+            </p>
+            
+            <div class="nugo-buttons">
+                <a href="#contacto" class="btn-primary btn-large">Comenzar diagnóstico</a>
+                <a href="#soluciones" class="btn-secondary btn-large">Ver soluciones</a>
             </div>
         </div>
 
-        <!-- El "Mockup" de Sistema en Perspectiva 3D -->
-        <div class="mockup-container">
-            <div class="hero-mockup-3d">
-                <div class="mockup-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <div class="mockup-search">app.logisticasimple.com</div>
-                </div>
-                <!-- Interior de la "App" simulada -->
-                <div class="mockup-body-premium">
-                    <div class="sidebar-fake">
-                        <div class="menu-item active"></div>
-                        <div class="menu-item"></div>
-                        <div class="menu-item"></div>
+        <!-- El "Dashboard" Mockup Plano y Perfecto -->
+        <div class="nugo-dashboard-wrapper">
+            <div class="nugo-dashboard">
+                <div class="dash-header">
+                    <div class="dash-dots">
+                        <span></span><span></span><span></span>
                     </div>
-                    <div class="content-fake">
-                        <div class="card-fake header-fake">
-                            <h4>Panel de Control de Inventario</h4>
-                            <div class="status-badge">Operación Óptima</div>
+                    <div class="dash-url">app.logisticasimple.com</div>
+                </div>
+                <!-- Interfaz simulada con CSS -->
+                <div class="dash-body">
+                    <div class="dash-sidebar">
+                        <div class="sidebar-item active"></div>
+                        <div class="sidebar-item"></div>
+                        <div class="sidebar-item"></div>
+                        <div class="sidebar-item"></div>
+                    </div>
+                    <div class="dash-content">
+                        <div class="dash-top">
+                            <div class="dash-title">Resumen de Operaciones</div>
+                            <div class="dash-status">Estado: Óptimo</div>
                         </div>
-                        <div class="stats-grid-fake">
-                            <div class="card-fake stat-card">
-                                <span class="stat-title">Nivel de Stock</span>
-                                <span class="stat-number">98%</span>
+                        <div class="dash-metrics">
+                            <div class="metric-card">
+                                <span class="metric-label">Precisión de Inventario</span>
+                                <span class="metric-value">98.5%</span>
                             </div>
-                            <div class="card-fake stat-card">
-                                <span class="stat-title">Precisión de Ruteo</span>
-                                <span class="stat-number">+24%</span>
+                            <div class="metric-card">
+                                <span class="metric-label">Eficiencia de Ruteo</span>
+                                <span class="metric-value">+24%</span>
                             </div>
-                            <div class="card-fake stat-card">
-                                <span class="stat-title">Costos Ocultos</span>
-                                <span class="stat-number decrease">-15%</span>
+                            <div class="metric-card">
+                                <span class="metric-label">Reducción de Costos</span>
+                                <span class="metric-value green">-15%</span>
                             </div>
                         </div>
-                        <div class="card-fake chart-fake">
-                            <div class="chart-line"></div>
+                        <!-- Gráfico simulado -->
+                        <div class="dash-chart">
+                            <div class="chart-bar" style="height: 40%"></div>
+                            <div class="chart-bar" style="height: 60%"></div>
+                            <div class="chart-bar" style="height: 30%"></div>
+                            <div class="chart-bar" style="height: 80%"></div>
+                            <div class="chart-bar" style="height: 50%"></div>
+                            <div class="chart-bar" style="height: 90%"></div>
+                            <div class="chart-bar" style="height: 100%; background: #4F46E5;"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- Reflejo o sombra debajo del mockup -->
-            <div class="mockup-shadow"></div>
         </div>
     </header>
 
-    <!-- Transición al Modo Claro para los Servicios -->
-    <section id="soluciones" class="features-light">
-        <div class="features-header">
-            <h2>Gestión operativa de precisión</h2>
-            <p>Dejamos la teoría de lado. Implementamos soluciones de aplicación directa.</p>
+    <!-- Transición suave a la sección clara -->
+    <div class="curve-transition"></div>
+
+    <!-- Logos / Confianza -->
+    <section class="nugo-trusted">
+        <p>Acompañamos el crecimiento de la nueva industria</p>
+        <div class="logos-grid">
+            <div class="logo-item">EMPRESA A</div>
+            <div class="logo-item">EMPRESA B</div>
+            <div class="logo-item">EMPRESA C</div>
+            <div class="logo-item">EMPRESA D</div>
         </div>
-        
-        <div class="cards-grid">
-            <!-- Tarjeta 1 -->
-            <div class="card">
-                <div class="icon-box purple-light">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-                </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="soluciones" class="nugo-features">
+        <div class="features-header">
+            <h2>El fin de los cuellos de botella</h2>
+            <p>Implementamos soluciones de aplicación inmediata para proteger tu margen de ganancia.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
                 <h3>Auditoría de Inventario</h3>
-                <p>Clasificación ABC y estrategias de reposición. Evitamos quiebres de stock y minimizamos el capital inmovilizado en el almacén.</p>
+                <p>Clasificación de stock y diseño de puntos de pedido. Evitá inmovilizar capital y garantizá la disponibilidad de tus productos.</p>
             </div>
             
-            <!-- Tarjeta 2 -->
-            <div class="card">
-                <div class="icon-box green-light">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
-                </div>
-                <h3>Ruteo y Última Milla</h3>
-                <p>Optimización de rutas de distribución. Reducción de tiempos de tránsito y costos de fletes mediante planificación estructurada.</p>
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Logística de Distribución</h3>
+                <p>Mapeo y optimización de rutas. Reducí el tiempo de tus vehículos en la calle y el gasto en fletes tercerizados.</p>
             </div>
             
-            <!-- Tarjeta 3 -->
-            <div class="card">
-                <div class="icon-box blue-light">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
-                </div>
-                <h3>Tableros de Control</h3>
-                <p>Armado de métricas logísticas en hojas de cálculo. Visibilidad total de la operación sin necesidad de invertir en WMS complejos.</p>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Análisis de Datos</h3>
+                <p>Construcción de tableros de control y KPIs logísticos en planillas accesibles. Tomá decisiones basadas en números, no en intuición.</p>
             </div>
         </div>
     </section>
