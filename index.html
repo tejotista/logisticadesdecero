@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoría Logística | Operaciones Inteligentes</title>
-    <!-- Fuente Inter, clave para el estilo SaaS moderno -->
+    <title>Consultoría Logística | Nivel Pro</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -12,32 +11,34 @@
 </head>
 <body>
 
-    <!-- Navegación Flotante -->
+    <!-- Luces de fondo desenfocadas -->
+    <div class="glow-bg glow-1"></div>
+    <div class="glow-bg glow-2"></div>
+
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">Logística<span>Simple</span></div>
             <ul class="nav-links">
                 <li><a href="#soluciones">Soluciones</a></li>
-                <li><a href="#metodologia">Cómo funciona</a></li>
+                <li><a href="#metodologia">Proceso</a></li>
             </ul>
             <a href="#contacto" class="btn-primary btn-sm">Agendar llamada</a>
         </div>
     </nav>
 
-    <!-- Hero Section (Super limpia y centrada) -->
     <header class="hero">
         <div class="hero-content">
-            <div class="badge">🚀 Consultoría para negocios en crecimiento</div>
-            <h1>La logística de tu negocio,<br><span>resuelta desde el día uno.</span></h1>
-            <p>Dejá atrás el caos del inventario y los envíos. Implementamos procesos claros, eficientes y sin sistemas costosos para que tu emprendimiento pueda escalar sin frenos.</p>
+            <div class="badge">
+                <span class="badge-dot"></span> Consultoría estratégica para empresas
+            </div>
+            <h1>La logística de tu negocio,<br><span class="text-gradient">resuelta desde el día uno.</span></h1>
+            <p>Implementamos procesos claros y eficientes sin sistemas costosos. Operaciones escalables para que tu negocio crezca sin frenos.</p>
             <div class="hero-buttons">
-                <a href="#contacto" class="btn-primary">Empezar a optimizar</a>
-                <a href="#soluciones" class="btn-secondary">Conocer más</a>
+                <a href="#contacto" class="btn-primary btn-large shadow-hover">Empezar a optimizar</a>
             </div>
         </div>
     </header>
 
-    <!-- Sección de Tarjetas Blancas Flotantes -->
     <section id="soluciones" class="features">
         <div class="features-header">
             <h2>El control de tu operación, en tus manos</h2>
@@ -46,38 +47,33 @@
         
         <div class="cards-grid">
             <div class="card">
-                <div class="icon-box purple-light"></div>
+                <div class="icon-box purple-light">
+                    <!-- Ícono SVG real de Inventario -->
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                </div>
                 <h3>Inventario Exacto</h3>
-                <p>Auditoría y clasificación de tu stock. Dejás de perder ventas por quiebres y de inmovilizar capital en mercadería estancada.</p>
+                <p>Auditoría y clasificación de stock. Dejás de perder ventas por quiebres y de inmovilizar capital.</p>
             </div>
             
             <div class="card">
-                <div class="icon-box green-light"></div>
+                <div class="icon-box green-light">
+                    <!-- Ícono SVG real de Transporte -->
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
+                </div>
                 <h3>Rutas Inteligentes</h3>
-                <p>Planificamos tu distribución y logística de última milla. Menos tiempo en la calle significa menores costos operativos.</p>
+                <p>Planificamos tu distribución y logística de última milla. Menores tiempos y costos de entrega.</p>
             </div>
             
             <div class="card">
-                <div class="icon-box blue-light"></div>
-                <h3>Datos Claros</h3>
-                <p>Armamos tableros de control simples en planillas. Toda la información que necesitás para tomar decisiones, a un clic.</p>
+                <div class="icon-box blue-light">
+                    <!-- Ícono SVG real de Datos -->
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </div>
+                <h3>Decisiones con Datos</h3>
+                <p>Armamos tableros de control simples. Toda la información clave que necesitás para decidir, a un clic.</p>
             </div>
         </div>
     </section>
-
-    <!-- Banner Call to Action Inferior -->
-    <section id="contacto" class="bottom-cta">
-        <div class="cta-box">
-            <h2>¿Listo para llevar tu logística al siguiente nivel?</h2>
-            <p>Hablemos sobre tu negocio y armemos un plan de acción a tu medida.</p>
-            <a href="mailto:tu-correo@gmail.com" class="btn-primary btn-large">Escribime hoy</a>
-        </div>
-    </section>
-
-    <!-- Footer Simple -->
-    <footer>
-        <p>&copy; 2026 Logística Simple. Simplificando operaciones paso a paso.</p>
-    </footer>
 
 </body>
 </html>
