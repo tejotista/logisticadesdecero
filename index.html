@@ -3,74 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consultoría Logística | Nivel Pro</title>
+    <title>Consultoría Logística | Nivel SaaS</title>
+    <!-- Fuente Plus Jakarta Sans: El secreto del estilo NUGO -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Luces de fondo desenfocadas -->
-    <div class="glow-bg glow-1"></div>
-    <div class="glow-bg glow-2"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Menú Flotante Estilo Píldora -->
+    <div class="nav-wrapper">
+        <nav class="navbar">
             <div class="logo">Logística<span>Simple</span></div>
             <ul class="nav-links">
                 <li><a href="#soluciones">Soluciones</a></li>
-                <li><a href="#metodologia">Proceso</a></li>
+                <li><a href="#proceso">El Proceso</a></li>
             </ul>
-            <a href="#contacto" class="btn-primary btn-sm">Agendar llamada</a>
-        </div>
-    </nav>
+            <a href="#contacto" class="btn-primary btn-sm">Agendar asesoría</a>
+        </nav>
+    </div>
 
-    <header class="hero">
+    <!-- Hero en Modo Oscuro (SaaS Style) -->
+    <header class="hero-dark">
+        <div class="glow-bg glow-purple"></div>
+        <div class="glow-bg glow-blue"></div>
+        
         <div class="hero-content">
-            <div class="badge">
-                <span class="badge-dot"></span> Consultoría estratégica para empresas
+            <div class="badge-dark">
+                <span class="badge-dot pulse"></span> Optimizando operaciones en Argentina
             </div>
-            <h1>La logística de tu negocio,<br><span class="text-gradient">resuelta desde el día uno.</span></h1>
-            <p>Implementamos procesos claros y eficientes sin sistemas costosos. Operaciones escalables para que tu negocio crezca sin frenos.</p>
+            <h1>Logística inteligente.<br><span class="text-gradient">Sin procesos complejos.</span></h1>
+            <p>Estructuramos tu inventario y distribución desde el primer día. Rentabilidad y orden para que tu empresa escale con bases sólidas.</p>
             <div class="hero-buttons">
-                <a href="#contacto" class="btn-primary btn-large shadow-hover">Empezar a optimizar</a>
+                <a href="#contacto" class="btn-primary btn-large">Iniciar diagnóstico</a>
+                <a href="#soluciones" class="btn-outline-dark">Ver servicios</a>
             </div>
         </div>
     </header>
 
-    <section id="soluciones" class="features">
+    <!-- Transición al Modo Claro para los Servicios -->
+    <section id="soluciones" class="features-light">
         <div class="features-header">
-            <h2>El control de tu operación, en tus manos</h2>
-            <p>Soluciones prácticas para problemas reales del día a día.</p>
+            <h2>Gestión operativa de precisión</h2>
+            <p>Dejamos la teoría de lado. Implementamos soluciones de aplicación directa.</p>
         </div>
         
         <div class="cards-grid">
+            <!-- Tarjeta 1 -->
             <div class="card">
                 <div class="icon-box purple-light">
-                    <!-- Ícono SVG real de Inventario -->
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
                 </div>
-                <h3>Inventario Exacto</h3>
-                <p>Auditoría y clasificación de stock. Dejás de perder ventas por quiebres y de inmovilizar capital.</p>
+                <h3>Auditoría de Inventario</h3>
+                <p>Clasificación ABC y estrategias de reposición. Evitamos quiebres de stock y minimizamos el capital inmovilizado en el almacén.</p>
             </div>
             
+            <!-- Tarjeta 2 -->
             <div class="card">
                 <div class="icon-box green-light">
-                    <!-- Ícono SVG real de Transporte -->
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path></svg>
                 </div>
-                <h3>Rutas Inteligentes</h3>
-                <p>Planificamos tu distribución y logística de última milla. Menores tiempos y costos de entrega.</p>
+                <h3>Ruteo y Última Milla</h3>
+                <p>Optimización de rutas de distribución. Reducción de tiempos de tránsito y costos de fletes mediante planificación estructurada.</p>
             </div>
             
+            <!-- Tarjeta 3 -->
             <div class="card">
                 <div class="icon-box blue-light">
-                    <!-- Ícono SVG real de Datos -->
                     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
                 </div>
-                <h3>Decisiones con Datos</h3>
-                <p>Armamos tableros de control simples. Toda la información clave que necesitás para decidir, a un clic.</p>
+                <h3>Tableros de Control</h3>
+                <p>Armado de métricas logísticas en hojas de cálculo. Visibilidad total de la operación sin necesidad de invertir en WMS complejos.</p>
             </div>
         </div>
     </section>
