@@ -1,20 +1,21 @@
-/* --- Variables de Paleta y Tipografía --- */
 :root {
     --bg-peach: linear-gradient(135deg, #FFF9F5 0%, #FAE1D4 40%, #F5C6A5 100%);
     --bg-white: #FFFFFF;
-    
     --text-dark: #1A1A1A;
-    --text-muted: #444444;
-    --text-light: #777777;
-    
-    --nugo-orange: #C06443; /* El color anaranjado/tierra de la captura */
-    --nugo-button: linear-gradient(90deg, #513645 0%, #764A5D 100%); /* El botón oscuro de Nugo */
+    --text-muted: #555555;
+    --text-light: #888888;
+    --nugo-orange: #C06443;
+    --nugo-button: linear-gradient(90deg, #513645 0%, #764A5D 100%);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 body { background-color: var(--bg-white); color: var(--text-dark); overflow-x: hidden; }
 
-/* --- Menú Superior --- */
+/* Efecto Reveal */
+.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Menú Superior */
 .navbar { position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; z-index: 1000; }
 .logo { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.5px; }
 .logo span { font-weight: 500; }
@@ -22,112 +23,93 @@ body { background-color: var(--bg-white); color: var(--text-dark); overflow-x: h
 .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s; }
 .nav-links a:hover { opacity: 0.6; }
 
-/* --- PORTADA DURAZNO --- */
+/* Portada Durazno */
 .hero-durazno {
-    background: var(--bg-peach);
-    height: 100vh;
-    display: flex; align-items: center; justify-content: center;
+    background: var(--bg-peach); height: 100vh; display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 0 5%;
 }
 .hero-content { max-width: 900px; }
 .hero-durazno h1 { font-size: clamp(3rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; color: var(--text-dark); }
 .hero-durazno p { font-size: 1.25rem; color: #333; font-weight: 500; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-
-/* Botones estilo Nugo */
 .btn-primary-nugo {
     display: inline-block; background: var(--nugo-button); color: #FFF; text-decoration: none;
     padding: 1.1rem 2.5rem; border-radius: 100px; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; border: none;
 }
 .btn-primary-nugo:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(81, 54, 69, 0.3); }
-.btn-sm-nugo { padding: 0.9rem 2rem; font-size: 1rem; }
 
-/* --- NUEVA SECCIÓN: EJES TEMÁTICOS TIPOGRÁFICOS --- */
-.ejes-section {
-    padding: 8rem 5%;
-    background-color: var(--bg-white);
-    max-width: 1300px;
-    margin: 0 auto;
-}
+/* --- LA MAGIA: SECCIÓN STICKY LIMPIA --- */
+.sticky-section { padding: 8rem 5%; max-width: 1200px; margin: 0 auto; background-color: var(--bg-white); }
 
-.eje-block {
+.sticky-block {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-    margin-bottom: 7rem; /* Mucho espacio blanco entre temas, da elegancia */
+    margin-bottom: 8rem;
 }
 
-/* En PC se dividen en dos columnas: Izquierda la etiqueta, Derecha el contenido */
+/* En pantallas grandes, se activa el Sticky en dos columnas */
 @media (min-width: 900px) {
-    .eje-block {
+    .sticky-block {
         flex-direction: row;
-        align-items: flex-start;
-        gap: 4rem;
+        align-items: flex-start; 
+        gap: 6rem;
+    }
+    .sticky-sidebar {
+        /* ESTO CONGELA EL TÍTULO EN LA PANTALLA */
+        position: sticky;
+        top: 150px; 
+        min-width: 200px;
     }
 }
 
-.eje-label {
-    min-width: 150px;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--text-light);
-    margin-top: 0.5rem; /* Alinea con la primera línea del texto gigante */
+/* El nuevo diseño del título izquierdo (Sin la palabra Eje) */
+.sticky-title { 
+    font-size: 1.3rem; 
+    font-weight: 700; 
+    color: var(--text-dark); 
+    letter-spacing: -0.5px;
+}
+.sticky-title::before {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 3px;
+    background: var(--nugo-orange);
+    margin-bottom: 1rem;
+    border-radius: 2px;
 }
 
-.eje-label span {
-    color: var(--nugo-orange);
-}
+/* Contenido Derecho */
+.sticky-content { flex: 1; max-width: 800px; }
+.sticky-content h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; line-height: 1.2; letter-spacing: -1px; margin-bottom: 2rem; color: var(--text-dark); }
+.sticky-content h2 span { color: var(--nugo-orange); }
+.sticky-content p { font-size: 1.15rem; line-height: 1.7; color: var(--text-muted); margin-bottom: 1.5rem; }
 
-.eje-content {
-    flex: 1;
-    max-width: 850px;
+/* Caja de detalles interna */
+.detail-box {
+    background: #FAFAFA;
+    border-left: 4px solid var(--nugo-orange);
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 0 12px 12px 0;
 }
+.detail-box strong { display: block; font-size: 1.1rem; color: var(--text-dark); margin-bottom: 1rem; }
+.detail-box ul { padding-left: 1.5rem; color: var(--text-muted); line-height: 1.8; font-size: 1.05rem; }
 
-.eje-content h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 700;
-    line-height: 1.2;
-    color: var(--text-dark);
-    letter-spacing: -1px;
-    margin-bottom: 1.5rem;
-}
+.concept-tags { font-size: 1rem !important; font-weight: 600; color: var(--text-dark) !important; margin-top: 2rem; }
 
-.eje-content h2 span {
-    color: var(--nugo-orange);
-}
-
-.eje-content p {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-muted);
-    margin-bottom: 1.2rem;
-}
-
-/* Los hashtags / palabras clave */
-.eje-tags {
-    font-size: 1rem !important;
-    font-weight: 600;
-    color: var(--text-dark) !important;
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem !important;
-}
-
-/* --- CTA FINAL --- */
+/* CTA FINAL */
 .cta-section { padding: 6rem 5%; text-align: center; background: var(--bg-peach); }
 .cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -1px; }
 .cta-section p { font-size: 1.1rem; color: #333; margin-bottom: 2.5rem; }
 
-/* --- Botón WhatsApp --- */
-.whatsapp-float {
-    position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.2s; z-index: 1000;
-}
+/* WhatsApp */
+.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.2s; z-index: 1000; }
 .whatsapp-float:hover { transform: scale(1.1); }
 
-/* Adaptación Celular (Oculta menú arriba) */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-    .ejes-section { padding: 5rem 5%; }
-    .eje-block { margin-bottom: 5rem; }
+    .sticky-block { margin-bottom: 5rem; gap: 2rem; }
+    .sticky-content h2 { margin-bottom: 1rem; }
+    .detail-box { padding: 1.5rem; }
 }
