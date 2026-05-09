@@ -1,149 +1,194 @@
-/* Paleta de Colores de Alta Gama (Estilo Nugo) */
+/* Paleta de Colores NUGO Style */
 :root {
-    --brand-primary: #5A32FA;    
-    --brand-secondary: #8B5CF6;  
-    --text-main: #0B1120;        
-    --text-p: #475569;           
-    --bg-page: #F8FAFC;          
-    --bg-white: #FFFFFF;
-    --border-soft: rgba(226, 232, 240, 0.8);
-    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --brand-primary: #5C33FF;    /* Violeta NUGO */
+    --brand-secondary: #00E5FF;  /* Cian brillante para contraste */
+    --bg-dark: #0B0E14;          /* Fondo oscuro casi negro */
+    --bg-light: #F8FAFC;         /* Fondo claro para servicios */
+    --text-white: #FFFFFF;
+    --text-gray: #94A3B8;
+    --text-dark: #0F172A;
+    --border-light: rgba(255, 255, 255, 0.1);
+    --border-dark: rgba(0, 0, 0, 0.05);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
 
 body {
-    background-color: var(--bg-page);
-    color: var(--text-main);
-    line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--text-dark);
     -webkit-font-smoothing: antialiased;
-    position: relative;
-    overflow-x: hidden; /* Evita scroll horizontal por las luces */
+    overflow-x: hidden;
 }
 
-/* --- Luces de Fondo (Glow) --- */
-.glow-bg {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(90, 50, 250, 0.15) 0%, rgba(255,255,255,0) 70%);
-    border-radius: 50%;
-    z-index: -1;
-    filter: blur(60px);
-}
-.glow-1 { top: -200px; left: -100px; }
-.glow-2 { top: 200px; right: -200px; background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(255,255,255,0) 70%); }
-
-/* --- Navbar con Glassmorphism --- */
-.navbar {
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+/* --- Menú Flotante (Detached Navbar) --- */
+.nav-wrapper {
     position: fixed;
-    top: 0; width: 100%; z-index: 1000;
-    border-bottom: 1px solid var(--border-soft);
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
 }
 
-.nav-container {
-    max-width: 1200px; margin: 0 auto; padding: 1rem 5%;
-    display: flex; justify-content: space-between; align-items: center;
+.navbar {
+    background-color: rgba(11, 14, 20, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 90%;
+    max-width: 1000px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 100px; /* Forma de píldora */
+    border: 1px solid var(--border-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
-.logo span { color: var(--brand-primary); }
+.logo { font-weight: 800; font-size: 1.3rem; color: var(--text-white); letter-spacing: -0.5px; }
+.logo span { color: var(--brand-secondary); }
 
-.nav-links { list-style: none; display: flex; gap: 2.5rem; }
-.nav-links a { text-decoration: none; color: var(--text-p); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
-.nav-links a:hover { color: var(--brand-primary); }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a { text-decoration: none; color: var(--text-gray); font-weight: 600; font-size: 0.9rem; transition: color 0.3s; }
+.nav-links a:hover { color: var(--text-white); }
 
 /* --- Botones --- */
 .btn-primary {
     background-color: var(--brand-primary);
-    color: var(--bg-white);
+    color: var(--text-white);
     text-decoration: none;
-    font-weight: 600;
-    border-radius: 50px;
-    padding: 0.8rem 1.8rem;
+    font-weight: 700;
+    border-radius: 100px;
+    padding: 0.8rem 1.5rem;
     transition: all 0.3s ease;
     display: inline-block;
+    border: 1px solid var(--brand-primary);
 }
-.btn-primary:hover { background-color: var(--brand-secondary); transform: translateY(-2px); }
-.shadow-hover:hover { box-shadow: 0 10px 25px -5px rgba(90, 50, 250, 0.4); }
+
+.btn-primary:hover {
+    box-shadow: 0 0 20px rgba(92, 51, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-outline-dark {
+    background-color: transparent;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 100px;
+    padding: 0.8rem 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 1px solid var(--border-light);
+}
+
+.btn-outline-dark:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-white);
+}
+
 .btn-sm { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
-.btn-large { padding: 1rem 2.5rem; font-size: 1.1rem; }
+.btn-large { padding: 1rem 2rem; font-size: 1.1rem; }
 
-/* --- Hero Section --- */
-.hero {
-    padding: 12rem 5% 8rem;
+/* --- Hero Oscuro --- */
+.hero-dark {
+    position: relative;
+    padding: 14rem 5% 10rem;
     text-align: center;
-    max-width: 900px; margin: 0 auto;
-    animation: fadeUp 0.8s ease-out; /* Animación de entrada */
+    color: var(--text-white);
+    overflow: hidden;
 }
 
-/* Badge estilo Tech */
-.badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background-color: var(--bg-white);
-    color: var(--text-p);
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-size: 0.85rem; font-weight: 500;
-    margin-bottom: 2rem;
-    border: 1px solid var(--border-soft);
-    box-shadow: var(--shadow-soft);
-}
-.badge-dot {
-    width: 8px; height: 8px;
-    background-color: var(--brand-primary);
+/* Luces de neón en el fondo oscuro */
+.glow-bg {
+    position: absolute;
+    width: 600px; height: 600px;
     border-radius: 50%;
+    z-index: -1;
+    filter: blur(80px);
+}
+.glow-purple { top: -100px; left: -10%; background: radial-gradient(circle, rgba(92, 51, 255, 0.2) 0%, rgba(0,0,0,0) 70%); }
+.glow-blue { bottom: 0; right: -10%; background: radial-gradient(circle, rgba(0, 229, 255, 0.15) 0%, rgba(0,0,0,0) 70%); }
+
+.hero-content { max-width: 800px; margin: 0 auto; position: relative; z-index: 10; }
+
+.badge-dark {
+    display: inline-flex; align-items: center; gap: 8px;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-gray);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.85rem; font-weight: 600;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-light);
 }
 
-.hero h1 {
-    font-size: 4.5rem; font-weight: 800; line-height: 1.1;
-    letter-spacing: -1.5px; margin-bottom: 1.5rem;
+.badge-dot { width: 8px; height: 8px; background-color: var(--brand-secondary); border-radius: 50%; }
+
+.pulse {
+    animation: pulseGlow 2s infinite;
 }
 
-/* Texto con degradado (El secreto del estilo moderno) */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
+    70% { box-shadow: 0 0 0 6px rgba(0, 229, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
+}
+
+.hero-dark h1 {
+    font-size: 4.8rem; font-weight: 800; line-height: 1.05;
+    letter-spacing: -2px; margin-bottom: 1.5rem;
+}
+
 .text-gradient {
-    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+    background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
 }
 
-.hero p {
-    font-size: 1.25rem; color: var(--text-p);
-    margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto;
+.hero-dark p {
+    font-size: 1.2rem; color: var(--text-gray);
+    margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;
 }
 
-/* --- Tarjetas (Cards) Premium --- */
-.features { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
-.features-header { text-align: center; margin-bottom: 4rem; }
-.features-header h2 { font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 1rem; }
-.features-header p { font-size: 1.1rem; color: var(--text-p); }
+.hero-buttons { display: flex; justify-content: center; gap: 1rem; }
+
+/* --- Sección Clara (Servicios) --- */
+.features-light {
+    background-color: var(--bg-light);
+    padding: 8rem 5%;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin-top: -40px; /* Superpone la sección clara sobre la oscura */
+    position: relative;
+    z-index: 20;
+}
+
+.features-header { text-align: center; margin-bottom: 5rem; }
+.features-header h2 { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 1rem; color: var(--text-dark); }
+.features-header p { font-size: 1.1rem; color: #64748B; }
 
 .cards-grid {
     display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
+    max-width: 1100px; margin: 0 auto;
 }
 
 .card {
-    background-color: var(--bg-white);
+    background-color: #FFFFFF;
     padding: 3rem 2.5rem;
     border-radius: 24px;
-    box-shadow: var(--shadow-soft);
-    border: 1px solid var(--border-soft);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 0 4px 6px -1px var(--border-dark), 0 2px 4px -1px var(--border-dark);
+    border: 1px solid rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-hover);
-    border-color: rgba(90, 50, 250, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
 .icon-box {
-    width: 56px; height: 56px;
+    width: 60px; height: 60px;
     border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 2rem;
@@ -151,15 +196,9 @@ body {
 
 .icon-box svg { width: 28px; height: 28px; }
 
-.purple-light { background-color: #EEF2FF; color: var(--brand-primary); }
-.green-light { background-color: #ECFDF5; color: #10B981; }
-.blue-light { background-color: #F0F9FF; color: #3B82F6; }
+.purple-light { background-color: #F5F3FF; color: var(--brand-primary); }
+.green-light { background-color: #F0FDF4; color: #16A34A; }
+.blue-light { background-color: #EFF6FF; color: #2563EB; }
 
-.card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
-.card p { color: var(--text-p); font-size: 1rem; line-height: 1.6; }
-
-/* Animación */
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+.card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -0.5px; }
+.card p { color: #64748B; font-size: 1rem; line-height: 1.6; }
