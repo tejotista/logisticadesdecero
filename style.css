@@ -1,278 +1,165 @@
-/* Variables de Color inspiradas en SaaS moderno */
+/* Paleta de Colores de Alta Gama (Estilo Nugo) */
 :root {
-    --brand-primary: #5A32FA;    /* Un violeta/índigo vibrante y tecnológico */
-    --brand-hover: #4624D6;
-    --text-main: #0F172A;        /* Azul medianoche casi negro para títulos */
-    --text-p: #475569;           /* Gris pizarra suave para párrafos */
-    --bg-page: #F8FAFC;          /* Gris muy claro (casi hielo) para el fondo */
+    --brand-primary: #5A32FA;    
+    --brand-secondary: #8B5CF6;  
+    --text-main: #0B1120;        
+    --text-p: #475569;           
+    --bg-page: #F8FAFC;          
     --bg-white: #FFFFFF;
-    --border-soft: #E2E8F0;
-    --shadow-soft: 0 20px 40px -15px rgba(15, 23, 42, 0.05); /* Sombra amplia y difuminada */
+    --border-soft: rgba(226, 232, 240, 0.8);
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Reseteo general */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
 
 body {
     background-color: var(--bg-page);
     color: var(--text-main);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased; /* Hace que la fuente se vea más nítida */
+    -webkit-font-smoothing: antialiased;
+    position: relative;
+    overflow-x: hidden; /* Evita scroll horizontal por las luces */
 }
 
-/* Navegación (Navbar) */
+/* --- Luces de Fondo (Glow) --- */
+.glow-bg {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(90, 50, 250, 0.15) 0%, rgba(255,255,255,0) 70%);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(60px);
+}
+.glow-1 { top: -200px; left: -100px; }
+.glow-2 { top: 200px; right: -200px; background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(255,255,255,0) 70%); }
+
+/* --- Navbar con Glassmorphism --- */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px); /* Efecto vidrio esmerilado moderno */
+    background-color: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
+    top: 0; width: 100%; z-index: 1000;
     border-bottom: 1px solid var(--border-soft);
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1200px; margin: 0 auto; padding: 1rem 5%;
+    display: flex; justify-content: space-between; align-items: center;
 }
 
-.logo {
-    font-weight: 800;
-    font-size: 1.4rem;
-    letter-spacing: -0.5px;
-}
+.logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
+.logo span { color: var(--brand-primary); }
 
-.logo span {
-    color: var(--brand-primary);
-}
+.nav-links { list-style: none; display: flex; gap: 2.5rem; }
+.nav-links a { text-decoration: none; color: var(--text-p); font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+.nav-links a:hover { color: var(--brand-primary); }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2.5rem;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--text-p);
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: color 0.2s;
-}
-
-.nav-links a:hover {
-    color: var(--brand-primary);
-}
-
-/* Botones estilo "Pill" (súper redondeados) */
+/* --- Botones --- */
 .btn-primary {
     background-color: var(--brand-primary);
     color: var(--bg-white);
     text-decoration: none;
     font-weight: 600;
-    border-radius: 50px; /* Bordes circulares */
-    padding: 0.8rem 1.8rem;
-    transition: all 0.3s ease;
-    display: inline-block;
-    border: 2px solid var(--brand-primary);
-}
-
-.btn-primary:hover {
-    background-color: var(--brand-hover);
-    border-color: var(--brand-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px -5px rgba(90, 50, 250, 0.4);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--text-main);
-    text-decoration: none;
-    font-weight: 600;
     border-radius: 50px;
     padding: 0.8rem 1.8rem;
     transition: all 0.3s ease;
     display: inline-block;
-    border: 2px solid var(--border-soft);
 }
+.btn-primary:hover { background-color: var(--brand-secondary); transform: translateY(-2px); }
+.shadow-hover:hover { box-shadow: 0 10px 25px -5px rgba(90, 50, 250, 0.4); }
+.btn-sm { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
+.btn-large { padding: 1rem 2.5rem; font-size: 1.1rem; }
 
-.btn-secondary:hover {
-    border-color: var(--text-main);
-    background-color: var(--bg-page);
-}
-
-.btn-sm {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-}
-
-.btn-large {
-    padding: 1rem 2.5rem;
-    font-size: 1.1rem;
-}
-
-/* Hero Section */
+/* --- Hero Section --- */
 .hero {
-    padding: 10rem 5% 6rem;
+    padding: 12rem 5% 8rem;
     text-align: center;
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 900px; margin: 0 auto;
+    animation: fadeUp 0.8s ease-out; /* Animación de entrada */
 }
 
+/* Badge estilo Tech */
 .badge {
-    display: inline-block;
-    background-color: #EEF2FF;
-    color: var(--brand-primary);
+    display: inline-flex; align-items: center; gap: 8px;
+    background-color: var(--bg-white);
+    color: var(--text-p);
     padding: 0.5rem 1.2rem;
     border-radius: 50px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.85rem; font-weight: 500;
     margin-bottom: 2rem;
-    border: 1px solid #E0E7FF;
+    border: 1px solid var(--border-soft);
+    box-shadow: var(--shadow-soft);
+}
+.badge-dot {
+    width: 8px; height: 8px;
+    background-color: var(--brand-primary);
+    border-radius: 50%;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1px;
-    margin-bottom: 1.5rem;
-    color: var(--text-main);
+    font-size: 4.5rem; font-weight: 800; line-height: 1.1;
+    letter-spacing: -1.5px; margin-bottom: 1.5rem;
 }
 
-.hero h1 span {
-    color: var(--brand-primary);
+/* Texto con degradado (El secreto del estilo moderno) */
+.text-gradient {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .hero p {
-    font-size: 1.25rem;
-    color: var(--text-p);
-    margin-bottom: 2.5rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 1.25rem; color: var(--text-p);
+    margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto;
 }
 
-.hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-/* Tarjetas (Cards) */
-.features {
-    padding: 5rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.features-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.features-header h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 1rem;
-}
-
-.features-header p {
-    font-size: 1.1rem;
-    color: var(--text-p);
-}
+/* --- Tarjetas (Cards) Premium --- */
+.features { padding: 5rem 5%; max-width: 1200px; margin: 0 auto; }
+.features-header { text-align: center; margin-bottom: 4rem; }
+.features-header h2 { font-size: 2.5rem; font-weight: 700; letter-spacing: -1px; margin-bottom: 1rem; }
+.features-header p { font-size: 1.1rem; color: var(--text-p); }
 
 .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
 }
 
 .card {
     background-color: var(--bg-white);
-    padding: 2.5rem;
-    border-radius: 24px; /* Bordes muy redondeados estilo app */
+    padding: 3rem 2.5rem;
+    border-radius: 24px;
     box-shadow: var(--shadow-soft);
-    border: 1px solid rgba(226, 232, 240, 0.6);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--border-soft);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.1);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(90, 50, 250, 0.2);
 }
 
 .icon-box {
-    width: 64px;
-    height: 64px;
+    width: 56px; height: 56px;
     border-radius: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 2rem;
 }
 
-.purple-light { background-color: #EEF2FF; }
-.green-light { background-color: #ECFDF5; }
-.blue-light { background-color: #F0F9FF; }
+.icon-box svg { width: 28px; height: 28px; }
 
-.card h3 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
+.purple-light { background-color: #EEF2FF; color: var(--brand-primary); }
+.green-light { background-color: #ECFDF5; color: #10B981; }
+.blue-light { background-color: #F0F9FF; color: #3B82F6; }
 
-.card p {
-    color: var(--text-p);
-    font-size: 1rem;
-    line-height: 1.6;
-}
+.card h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: 1rem; letter-spacing: -0.5px; }
+.card p { color: var(--text-p); font-size: 1rem; line-height: 1.6; }
 
-/* CTA Inferior */
-.bottom-cta {
-    padding: 5rem 5%;
-    max-width: 1000px;
-    margin: 0 auto 5rem;
-}
-
-.cta-box {
-    background-color: var(--brand-primary);
-    border-radius: 32px;
-    padding: 4rem 2rem;
-    text-align: center;
-    color: var(--bg-white);
-    box-shadow: 0 20px 40px -10px rgba(90, 50, 250, 0.3);
-}
-
-.cta-box h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    letter-spacing: -0.5px;
-}
-
-.cta-box p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    margin-bottom: 2.5rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--text-p);
-    border-top: 1px solid var(--border-soft);
-    font-size: 0.9rem;
+/* Animación */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
