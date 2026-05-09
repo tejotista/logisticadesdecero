@@ -1,63 +1,133 @@
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background-color: #FFFFFF; color: #1A1A1A; overflow-x: hidden; }
+/* --- Variables de Paleta y Tipografía --- */
+:root {
+    --bg-peach: linear-gradient(135deg, #FFF9F5 0%, #FAE1D4 40%, #F5C6A5 100%);
+    --bg-white: #FFFFFF;
+    
+    --text-dark: #1A1A1A;
+    --text-muted: #444444;
+    --text-light: #777777;
+    
+    --nugo-orange: #C06443; /* El color anaranjado/tierra de la captura */
+    --nugo-button: linear-gradient(90deg, #513645 0%, #764A5D 100%); /* El botón oscuro de Nugo */
+}
 
-/* Menú Superior */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: var(--bg-white); color: var(--text-dark); overflow-x: hidden; }
+
+/* --- Menú Superior --- */
 .navbar { position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 2rem 5%; z-index: 1000; }
-.logo { font-size: 1.5rem; font-weight: 800; color: #1A1A1A; letter-spacing: -0.5px; }
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--text-dark); letter-spacing: -0.5px; }
 .logo span { font-weight: 500; }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-.nav-links a { text-decoration: none; color: #1A1A1A; font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s; }
+.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 0.95rem; transition: opacity 0.2s; }
 .nav-links a:hover { opacity: 0.6; }
 
-/* Portada Durazno */
+/* --- PORTADA DURAZNO --- */
 .hero-durazno {
-    background: linear-gradient(135deg, #FFF9F5 0%, #FAE1D4 40%, #F5C6A5 100%);
-    height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: var(--bg-peach);
+    height: 100vh;
+    display: flex; align-items: center; justify-content: center;
     text-align: center; padding: 0 5%;
 }
 .hero-content { max-width: 900px; }
-.hero-durazno h1 { font-size: clamp(3rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; color: #1A1A1A; }
+.hero-durazno h1 { font-size: clamp(3rem, 6vw, 4.8rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; color: var(--text-dark); }
 .hero-durazno p { font-size: 1.25rem; color: #333; font-weight: 500; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+/* Botones estilo Nugo */
 .btn-primary-nugo {
-    display: inline-block; background: linear-gradient(90deg, #4A3343 0%, #684152 100%); color: #FFF; text-decoration: none;
+    display: inline-block; background: var(--nugo-button); color: #FFF; text-decoration: none;
     padding: 1.1rem 2.5rem; border-radius: 100px; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; border: none;
 }
-.btn-primary-nugo:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(74, 51, 67, 0.3); }
+.btn-primary-nugo:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(81, 54, 69, 0.3); }
+.btn-sm-nugo { padding: 0.9rem 2rem; font-size: 1rem; }
 
-/* Secciones comunes */
-.section-header { text-align: center; margin-bottom: 4rem; max-width: 700px; margin-left: auto; margin-right: auto; }
-.section-header h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; color: #1A1A1A; letter-spacing: -1px; }
-.section-header p { font-size: 1.1rem; color: #555; line-height: 1.6; }
+/* --- NUEVA SECCIÓN: EJES TEMÁTICOS TIPOGRÁFICOS --- */
+.ejes-section {
+    padding: 8rem 5%;
+    background-color: var(--bg-white);
+    max-width: 1300px;
+    margin: 0 auto;
+}
 
-/* Metodología */
-.methodology-section { padding: 8rem 5%; background-color: #FFFFFF; }
-.steps-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; max-width: 1100px; margin: 0 auto; }
-.step-card { text-align: left; }
-.step-number { font-size: 3rem; font-weight: 800; color: #F3EBEF; margin-bottom: 1rem; line-height: 1; letter-spacing: -2px; -webkit-text-stroke: 1px #5A3A4B; }
-.step-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #1A1A1A; }
-.step-card p { color: #555; line-height: 1.6; font-size: 1rem; }
+.eje-block {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 7rem; /* Mucho espacio blanco entre temas, da elegancia */
+}
 
-/* Servicios */
-.services-section { padding: 8rem 5%; background-color: #FFFDFB; }
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-.service-card { background: #FFFFFF; padding: 3rem 2.5rem; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); transition: transform 0.3s ease; border: 1px solid rgba(0,0,0,0.02); }
-.service-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(0,0,0,0.06); }
-.service-icon { width: 60px; height: 60px; background: #F3EBEF; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 1.5rem; }
-.service-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: #1A1A1A; }
-.service-card p { color: #555; line-height: 1.6; font-size: 1rem; }
+/* En PC se dividen en dos columnas: Izquierda la etiqueta, Derecha el contenido */
+@media (min-width: 900px) {
+    .eje-block {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 4rem;
+    }
+}
 
-/* CTA */
-.cta-section { padding: 6rem 5%; text-align: center; background: linear-gradient(135deg, #FFF9F5 0%, #FAE1D4 40%, #F5C6A5 100%); }
-.cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; color: #1A1A1A; letter-spacing: -1px; }
+.eje-label {
+    min-width: 150px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-top: 0.5rem; /* Alinea con la primera línea del texto gigante */
+}
+
+.eje-label span {
+    color: var(--nugo-orange);
+}
+
+.eje-content {
+    flex: 1;
+    max-width: 850px;
+}
+
+.eje-content h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text-dark);
+    letter-spacing: -1px;
+    margin-bottom: 1.5rem;
+}
+
+.eje-content h2 span {
+    color: var(--nugo-orange);
+}
+
+.eje-content p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+}
+
+/* Los hashtags / palabras clave */
+.eje-tags {
+    font-size: 1rem !important;
+    font-weight: 600;
+    color: var(--text-dark) !important;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem !important;
+}
+
+/* --- CTA FINAL --- */
+.cta-section { padding: 6rem 5%; text-align: center; background: var(--bg-peach); }
+.cta-section h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 1rem; color: var(--text-dark); letter-spacing: -1px; }
 .cta-section p { font-size: 1.1rem; color: #333; margin-bottom: 2.5rem; }
 
-/* WhatsApp */
-.whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.2s; z-index: 1000; }
+/* --- Botón WhatsApp --- */
+.whatsapp-float {
+    position: fixed; bottom: 30px; right: 30px; background: #25D366; width: 60px; height: 60px;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 15px rgba(37,211,102,0.4); transition: transform 0.2s; z-index: 1000;
+}
 .whatsapp-float:hover { transform: scale(1.1); }
 
-/* Móvil */
+/* Adaptación Celular (Oculta menú arriba) */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; }
-    .methodology-section, .services-section { padding: 5rem 5%; }
+    .ejes-section { padding: 5rem 5%; }
+    .eje-block { margin-bottom: 5rem; }
 }
