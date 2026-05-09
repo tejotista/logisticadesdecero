@@ -1,4 +1,4 @@
-/* Paleta de Colores NUGO Style */
+/* Paleta de Colores  */
 :root {
     --brand-primary: #5C33FF;    /* Violeta NUGO */
     --brand-secondary: #00E5FF;  /* Cian brillante para contraste */
@@ -37,7 +37,7 @@ body {
     width: 90%;
     max-width: 1000px;
     padding: 0.8rem 1.5rem;
-    border-radius: 100px; /* Forma de píldora */
+    border-radius: 100px;
     border: 1px solid var(--border-light);
     display: flex;
     justify-content: space-between;
@@ -90,16 +90,17 @@ body {
 .btn-sm { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
 .btn-large { padding: 1rem 2rem; font-size: 1.1rem; }
 
-/* --- Hero Oscuro --- */
+.btn-glow { box-shadow: 0 0 30px rgba(92, 51, 255, 0.4); }
+.btn-glow:hover { box-shadow: 0 0 40px rgba(92, 51, 255, 0.7); }
+
+/* --- Hero Oscuro (Textos Gigantes) --- */
 .hero-dark {
     position: relative;
-    padding: 14rem 5% 10rem;
+    padding: 14rem 5% 2rem;
     text-align: center;
     color: var(--text-white);
-    overflow: hidden;
 }
 
-/* Luces de neón en el fondo oscuro */
 .glow-bg {
     position: absolute;
     width: 600px; height: 600px;
@@ -125,19 +126,20 @@ body {
 
 .badge-dot { width: 8px; height: 8px; background-color: var(--brand-secondary); border-radius: 50%; }
 
-.pulse {
-    animation: pulseGlow 2s infinite;
-}
-
+.pulse { animation: pulseGlow 2s infinite; }
 @keyframes pulseGlow {
     0% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.4); }
     70% { box-shadow: 0 0 0 6px rgba(0, 229, 255, 0); }
     100% { box-shadow: 0 0 0 0 rgba(0, 229, 255, 0); }
 }
 
-.hero-dark h1 {
-    font-size: 4.8rem; font-weight: 800; line-height: 1.05;
-    letter-spacing: -2px; margin-bottom: 1.5rem;
+.hero-title {
+    font-size: 5.5rem; 
+    font-weight: 800; 
+    line-height: 1.05;
+    letter-spacing: -2.5px; 
+    margin-bottom: 1.5rem;
+    color: #FFFFFF;
 }
 
 .text-gradient {
@@ -146,20 +148,171 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
-.hero-dark p {
-    font-size: 1.2rem; color: var(--text-gray);
-    margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;
+.hero-subtitle {
+    font-size: 1.25rem; 
+    color: #94A3B8;
+    margin-bottom: 3rem; 
+    max-width: 650px; 
+    margin-left: auto; 
+    margin-right: auto;
+    line-height: 1.7;
 }
 
 .hero-buttons { display: flex; justify-content: center; gap: 1rem; }
+
+/* --- La Magia del Mockup 3D  --- */
+.mockup-container {
+    max-width: 1000px;
+    margin: 5rem auto -15rem; 
+    position: relative;
+    z-index: 15;
+    perspective: 1000px;
+}
+
+.hero-mockup-3d {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transform: rotateX(12deg) translateY(0) scale(0.95);
+    transform-style: preserve-3d;
+    box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.8), 0 0 40px rgba(92, 51, 255, 0.15);
+    transition: transform 0.5s ease;
+}
+
+.hero-mockup-3d:hover {
+    transform: rotateX(5deg) translateY(-10px) scale(0.98);
+}
+
+.mockup-header {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background-color: #FF5F56; }
+.yellow { background-color: #FFBD2E; }
+.green { background-color: #27C93F; }
+
+.mockup-search {
+    margin-left: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 1rem;
+    border-radius: 5px;
+    color: #64748B;
+    font-size: 0.8rem;
+    flex-grow: 1;
+    max-width: 300px;
+    text-align: left;
+}
+
+/* --- Diseño Interior de la App Falsa --- */
+.mockup-body-premium {
+    display: flex;
+    height: 450px;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+.sidebar-fake {
+    width: 60px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.menu-item {
+    width: 24px; height: 24px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+}
+.menu-item.active { background: var(--brand-primary); }
+
+.content-fake {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-fake {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.header-fake {
+    display: flex; justify-content: space-between; align-items: center;
+}
+.header-fake h4 { color: #FFF; font-size: 1.1rem; }
+.status-badge {
+    background: rgba(0, 229, 255, 0.1);
+    color: #00E5FF; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem;
+}
+
+.stats-grid-fake {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+
+.stat-card { display: flex; flex-direction: column; gap: 0.5rem; }
+.stat-title { color: #94A3B8; font-size: 0.85rem; }
+.stat-number { color: #FFF; font-size: 1.8rem; font-weight: 800; }
+.decrease { color: #10B981; }
+
+.chart-fake { flex-grow: 1; position: relative; overflow: hidden;}
+.chart-line {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 50%;
+    background: linear-gradient(180deg, rgba(92, 51, 255, 0.2) 0%, rgba(0,0,0,0) 100%);
+    border-top: 3px solid var(--brand-primary);
+    border-radius: 12px 12px 0 0;
+}
+
+/* --- Barra de Empresas de Confianza --- */
+.trusted-by {
+    background-color: var(--bg-light);
+    padding: 20rem 5% 4rem; 
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.trusted-by p {
+    color: #94A3B8;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+}
+
+.logos-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4rem;
+    opacity: 0.5;
+    filter: grayscale(100%);
+}
+
+.logo-placeholder {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
 
 /* --- Sección Clara (Servicios) --- */
 .features-light {
     background-color: var(--bg-light);
     padding: 8rem 5%;
-    border-top-left-radius: 40px;
-    border-top-right-radius: 40px;
-    margin-top: -40px; /* Superpone la sección clara sobre la oscura */
     position: relative;
     z-index: 20;
 }
